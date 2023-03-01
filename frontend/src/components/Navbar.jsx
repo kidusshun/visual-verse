@@ -8,7 +8,6 @@ const Navbar = ({searchTerm, setSearchTerm, user}) => {
 
   return (
     <div className="flex justify-between gap-2 md:gap-5 w-full mt-5 pb-7">
-      <img src={user.image} alt="" />
       <div className='flex justify-start items-center px-2 w-3/4 rounded-md bg-white border-none outline-none focus-within:shadow-sm'>
         <IoMdSearch fontSize={21} className='ml-1' />
         <input 
@@ -22,7 +21,7 @@ const Navbar = ({searchTerm, setSearchTerm, user}) => {
       </div>
       <div className='flex gap-3'>
         <Link to={`user-profile/${user?._id}`} className='hidden md:block'>
-          <img src={user.image} alt="" className='w-1/8 rounded-full'/>
+          <img src={user.image} alt="" className='w-1/8 h-12 w-12 rounded-full'/>
         </Link>
         <Link to='create-pin' className='bg-black text-white rounded-lg w-1/8 h-12 md:w-14 flex justify-center items-center'>
           <IoMdAdd />

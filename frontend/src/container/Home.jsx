@@ -7,6 +7,7 @@ import { Pins } from './Pins';
 import { client } from '../client';
 import deployment from '../assets/deployment.png';
 import { userQuery } from '../utils/data';
+import {fetchUser} from "../utils/fetchUser";
 
 const Home = () => {
 
@@ -14,8 +15,7 @@ const Home = () => {
   const [user, setUser] = useState(null);
   const scrollRef = useRef(null);
   
-  const userInfo= localStorage.getItem('user') !== 'undefined' ? JSON.parse(localStorage.getItem('user')) : localStorage.clear(); 
-  
+  const userInfo = fetchUser();
   
   useEffect(() =>{
     const query =userQuery(userInfo.sub);
@@ -58,7 +58,7 @@ const Home = () => {
       <div className='pb-2 flex-1 h-screen overflow-y-scroll' ref={scrollRef}>
         <Routes>
           <Route path='/user-profile/:userId' element={<UserProfile />} />
-          <Route path='/*' element={<Pins user={user && user } />} />
+          <Route path='/*' element={<Pins user={ user } />} />
         </Routes>
       </div>
     </div>

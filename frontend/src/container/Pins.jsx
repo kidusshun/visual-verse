@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import {Routes, Route } from 'react-router-dom';
 import { CreatePin, Feed, Navbar, PinDetail, Search } from "../components";
-export const Pins = (user) => {
+export const Pins = ({user}) => {
   const [SearchTerm, setSearchTerm] = useState('');
   return (
     <div className='px-2 md:px-5'>

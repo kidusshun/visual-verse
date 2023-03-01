@@ -2,7 +2,7 @@ import React from 'react'
 import Home from './container/Home';
 import Login from './components/Login';
 import { GoogleOAuthProvider } from '@react-oauth/google';
-import { Routes, Route, useNavigate } from "react-router-dom";
+import { Routes, Route } from "react-router-dom";
 
 const App = () => {
   return (
